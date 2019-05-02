@@ -18,6 +18,7 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <!-- stylesheet links -->
+
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />     
     <link href='style.css' rel='stylesheet' />
 
@@ -39,7 +40,7 @@
     <div class= "container">
         <!-- some text -->
         <div class= "text">
-            <h1> My Favorite Restaurants</h1>
+            <h1> Bivariate Choropleth Map</h1>
         </div>
 
         <div class="map">
@@ -105,47 +106,47 @@
 
     <script>
    
-    map.on('load', function () {
-        map.addSource('museums', {
-            type: 'vector',
-            url: 'mapbox://mapbox.2opop9hr'
-        });
-        map.addLayer({
-            'id': 'museums',
-            'type': 'circle',
-            'source': 'museums',
-            'layout': {
-                'visibility': 'visible'
-            },
-            'paint': {
-                'circle-radius': 8,
-                'circle-color': 'rgba(55,148,179,1)'
-            },
-            'source-layer': 'museum-cusco'
-        });
+    // map.on('load', function () {
+    //     map.addSource('museums', {
+    //         type: 'vector',
+    //         url: 'mapbox://mapbox.2opop9hr'
+    //     });
+    //     map.addLayer({
+    //         'id': 'museums',
+    //         'type': 'circle',
+    //         'source': 'museums',
+    //         'layout': {
+    //             'visibility': 'visible'
+    //         },
+    //         'paint': {
+    //             'circle-radius': 8,
+    //             'circle-color': 'rgba(55,148,179,1)'
+    //         },
+    //         'source-layer': 'museum-cusco'
+    //     });
 
-        map.addSource('contours', {
-            type: 'vector',
-            url: 'mapbox://mapbox.mapbox-terrain-v2'
-        });
-        map.addLayer({
-            'id': 'contours',
-            'type': 'line',
-            'source': 'contours',
-            'source-layer': 'contour',
-            'layout': {
-                'visibility': 'visible',
-                'line-join': 'round',
-                'line-cap': 'round'
-            },
-            'paint': {
-                'line-color': '#877b59',
-                'line-width': 1
-            }
-        });
-    });
+    //     map.addSource('contours', {
+    //         type: 'vector',
+    //         url: 'mapbox://mapbox.mapbox-terrain-v2'
+    //     });
+    //     map.addLayer({
+    //         'id': 'contours',
+    //         'type': 'line',
+    //         'source': 'contours',
+    //         'source-layer': 'contour',  
+    //         'layout': {
+    //             'visibility': 'visible',
+    //             'line-join': 'round',
+    //             'line-cap': 'round'
+    //         },
+    //         'paint': {
+    //             'line-color': '#877b59',
+    //             'line-width': 1
+    //         }
+    //     });
+    // });
 
-    var toggleableLayerIds = [ 'contours', 'museums' ];
+    var toggleableLayerIds = [ 'access', 'some-access', 'no-access' ];
 
     for (var i = 0; i < toggleableLayerIds.length; i++) {
         var id = toggleableLayerIds[i];
@@ -173,7 +174,7 @@
 
         var layers = document.getElementById('menu');
         layers.appendChild(link);
-        
+
     }
 
     </script>
