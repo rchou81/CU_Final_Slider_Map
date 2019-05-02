@@ -104,14 +104,7 @@
     <nav id="menu"></nav>
 
     <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoicmNob3U4MSIsImEiOiJjanNjcG43Z2UwNGRwNDNwZWN0NTB0MW04In0.L5P48cRwORYjZkyPJ44quQ';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        zoom: 15,
-        center: [-71.97722138410576, -13.517379300798098]
-    });
-
+   
     map.on('load', function () {
         map.addSource('museums', {
             type: 'vector',
@@ -180,6 +173,7 @@
 
         var layers = document.getElementById('menu');
         layers.appendChild(link);
+        
     }
 
     </script>
