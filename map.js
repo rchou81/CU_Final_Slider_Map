@@ -9,8 +9,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicmNob3U4MSIsImEiOiJjanNjcG43Z2UwNGRwNDNwZWN0N
 let map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/light-v9',
-	center: [-73.964300,40.802977],
-	zoom: 15,
+	center: [18.233759, -66.412985],
+	zoom: 3,
 	pitch: 0
 })
 
