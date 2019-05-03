@@ -55,13 +55,3 @@ geolocate.on('geolocate', function(event) {
     document.getElementById('info').innerHTML = lng.toFixed(5) + "," + lat.toFixed(5)   
 })
 
-map.on('click', function(event) {
-
-    let lng = event.lngLat.lng
-    let lat = event.lngLat.lat
-
-    console.log("clicked:", lng, lat)
-
-    document.getElementById('info').innerHTML = lng.toFixed(5) + "," + lat.toFixed(5)
-
-})
