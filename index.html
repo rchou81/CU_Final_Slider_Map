@@ -37,17 +37,6 @@
 
     <!-- load additional javascript -->
 
-    <div class= "container">
-        <!-- some text -->
-        <div class= "text">
-            <h1> Bivariate Choropleth Map</h1>
-        </div>
-
-        <div class="map">
-            <script src='map.js'></script>
-        </div>
-    </div>
-
 <style>
 body { margin:0; padding:0; }
 #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -104,32 +93,6 @@ var slider = document.getElementById('slider');
 var sliderValue = document.getElementById('slider-value');
  
 map.on('load', function() {
- 
-// map.addLayer({
-//             "id": "access-above-10000",
-//             "type": "fill",
-//             "source": "composite",
-//             "source-layer": "access_above_10000-2irej7",
-//             "layout": {},
-//             "paint": {
-//                 "fill-color": [
-//                     "case",
-//                     [">", ["get", "B19013e1"], 15000],
-//                     [
-//                         "interpolate",
-//                         ["linear"],
-//                         ["get", "B19013e1"],
-//                         10096,
-//                         "hsl(0, 71%, 42%)",
-//                         108966,
-//                         "hsl(0, 100%, 92%)"
-//                     ],
-//                     "hsla(0, 0%, 100%, 0)"
-//                 ]
-//             }
-//         },
-
-// );
  
 slider.addEventListener('input', function(e) {
 // Adjust the layers opacity. layer here is arbitrary - this could

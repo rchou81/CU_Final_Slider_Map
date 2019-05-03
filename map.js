@@ -10,7 +10,7 @@ let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/rchou81/cjv7n19rw1rp31gp3n7uen9fl',
     center: [-66.412985,18.233759],
-    zoom: 8,
+    zoom: 9,
 })
 
 //create an instance of NavigationControl
@@ -41,17 +41,17 @@ let geolocate = new mapboxgl.GeolocateControl({
     }
 })
 
-map.addControl(geolocate, 'top-left')
+// map.addControl(geolocate, 'top-left')
 
-//this is an event handler
-geolocate.on('geolocate', function(event) {
-    let lng = event.coords.longitude
-    let lat = event.coords.latitude
+// //this is an event handler
+// geolocate.on('geolocate', function(event) {
+//     let lng = event.coords.longitude
+//     let lat = event.coords.latitude
 
-    //debug
-    console.log('geolocated:', lng, lat)
+//     //debug
+//     console.log('geolocated:', lng, lat)
 
-    // format lng lat values and display them on our 'info' element
-    document.getElementById('info').innerHTML = lng.toFixed(5) + "," + lat.toFixed(5)   
-})
+//     // format lng lat values and display them on our 'info' element
+//     document.getElementById('info').innerHTML = lng.toFixed(5) + "," + lat.toFixed(5)   
+// })
 
