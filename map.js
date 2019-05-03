@@ -8,9 +8,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicmNob3U4MSIsImEiOiJjanNjcG43Z2UwNGRwNDNwZWN0N
 
 let map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/rchou81/cjv7n19rw1rp31gp3n7uen9fl',
+    style: 'mapbox://styles/rchou81/cjv6xqqdr0c751fpmfk1pk1vr',
     center: [-66.412985,18.233759],
-    zoom: 8,
+    zoom: 9,
+    pitch: 0
 })
 
 //create an instance of NavigationControl
@@ -55,3 +56,13 @@ geolocate.on('geolocate', function(event) {
     document.getElementById('info').innerHTML = lng.toFixed(5) + "," + lat.toFixed(5)   
 })
 
+map.on('click', function(event) {
+
+    let lng = event.lngLat.lng
+    let lat = event.lngLat.lat
+
+    console.log("clicked:", lng, lat)
+
+    document.getElementById('info').innerHTML = lng.toFixed(5) + "," + lat.toFixed(5)
+
+})
