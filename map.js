@@ -10,7 +10,7 @@ let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/rchou81/cjv7n19rw1rp31gp3n7uen9fl',
     center: [-66.412985,18.233759],
-    zoom: 11,
+    zoom: 8,
 })
 
 //create an instance of NavigationControl
