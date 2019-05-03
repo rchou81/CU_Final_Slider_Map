@@ -1,2 +1,2 @@
-# CU_Bivariance_Map
-Conflict Urbanism Bivariance Exploration Map
+# CU_Final_Slider_Map
+Conflict Urbanism Final slider map
