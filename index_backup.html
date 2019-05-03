@@ -1,0 +1,131 @@
+<!DOCTYPE html> <!-- let the browser know this is an HTML file -->
+
+<html>      <!-- everything else is enclosed in html tags -->
+<head>      <!-- the head is for metadata prior to building the page -->
+
+    <!-- define the character set -->
+    <meta charset='utf-8' />    
+
+    <!-- the title of the page which will show up in the browser bar -->
+    <title>Final Slider Map</title>     
+
+    <!-- discourage the browser from caching the page -->    
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate' />
+    <meta http-equiv='Pragma' content='no-cache' />
+    <meta http-equiv='Expires' content='0' />    
+
+    <!-- tells mobile devices how to scale the page -->    
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- stylesheet links -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />     
+    <link href='style.css' rel='stylesheet' />
+
+    <!-- javascript links -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+
+</head>
+
+
+<body>      <!-- visible structure of page begins here -->
+
+
+    <!-- an element called 'map' -->
+    <div id='map'></div>
+
+    <!-- an element called 'info' -->
+    <div id='info'></div>
+
+    <!-- load additional javascript -->
+
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+
+<body>
+<style>
+.map-overlay {
+font:bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+position: absolute;
+width: 25%;
+top: 0;
+right: 10px;
+padding: 10px;
+}
+ 
+.map-overlay .map-overlay-inner {
+background-color: #fff;
+box-shadow:0 1px 2px rgba(0, 0, 0, 0.20);
+border-radius: 3px;
+padding: 10px;
+margin-bottom: 10px;
+}
+ 
+.map-overlay label {
+display: block;
+margin: 0 0 10px;
+}
+ 
+.map-overlay input {
+background-color: transparent;
+display: inline-block;
+width: 100%;
+position: relative;
+margin: 0;
+cursor: ew-resize;
+}
+
+</style>
+ 
+<div id='map'></div>
+ 
+<div class='map-overlay top'>
+<div class='map-overlay-inner'>
+<label>Cost of Solar Micro-Grid System: <span id='slider-value'>20,000 $USD</span></label>
+<input id='slider' type='range' min='0' max='100' step='0' value='100' />
+</div>
+</div>
+ 
+<script>
+
+var slider = document.getElementById('slider');
+var sliderValue = document.getElementById('slider-value');
+ 
+
+slider.addEventListener('input', function(e) {
+// Adjust the layers opacity. layer here is arbitrary - this could
+// be another layer name found in your style or a custom layer
+// added on the fly using `addSource`.
+
+income = 20000 * 0.01* e.target.value;
+afford = income * 3
+
+map.setPaintProperty('access-above-10000', 'fill-color', [
+  "case",
+  [
+    ">",
+    ["get", "B19013e1"],
+    afford
+  ],
+  [
+    "interpolate",
+    ["linear"],
+    ["get", "B19013e1"],
+    10096,
+    "hsl(0, 71%, 42%)",
+    108966,
+    "hsl(0, 100%, 92%)"
+  ],
+  "hsla(0, 0%, 100%, 0)"
+]);
+ 
+// // Value indicator
+// sliderValue.textContent = e.target.value + '%';
+sliderValue.textContent = income + ' $USD';
+});
+</script>
+ 
+</body>
+</html>
