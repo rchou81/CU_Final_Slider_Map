@@ -7,7 +7,7 @@
     <meta charset='utf-8' />    
 
     <!-- the title of the page which will show up in the browser bar -->
-    <title>Slider_Map</title>     
+    <title>Map Test</title>     
 
     <!-- discourage the browser from caching the page -->    
     <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate' />
@@ -36,6 +36,17 @@
     <div id='info'></div>
 
     <!-- load additional javascript -->
+
+    <div class= "container">
+        <!-- some text -->
+        <div class= "text">
+            <h1> Bivariate Choropleth Map</h1>
+        </div>
+
+        <div class="map">
+            <script src='map.js'></script>
+        </div>
+    </div>
 
     <style>
         .container {
@@ -94,6 +105,46 @@
     <nav id="menu"></nav>
 
     <script>
+   
+    // map.on('load', function () {
+    //     map.addSource('museums', {
+    //         type: 'vector',
+    //         url: 'mapbox://mapbox.2opop9hr'
+    //     });
+    //     map.addLayer({
+    //         'id': 'museums',
+    //         'type': 'circle',
+    //         'source': 'museums',
+    //         'layout': {
+    //             'visibility': 'visible'
+    //         },
+    //         'paint': {
+    //             'circle-radius': 8,
+    //             'circle-color': 'rgba(55,148,179,1)'
+    //         },
+    //         'source-layer': 'museum-cusco'
+    //     });
+
+    //     map.addSource('contours', {
+    //         type: 'vector',
+    //         url: 'mapbox://mapbox.mapbox-terrain-v2'
+    //     });
+    //     map.addLayer({
+    //         'id': 'contours',
+    //         'type': 'line',
+    //         'source': 'contours',
+    //         'source-layer': 'contour',  
+    //         'layout': {
+    //             'visibility': 'visible',
+    //             'line-join': 'round',
+    //             'line-cap': 'round'
+    //         },
+    //         'paint': {
+    //             'line-color': '#877b59',
+    //             'line-width': 1
+    //         }
+    //     });
+    // });
 
     var toggleableLayerIds = [ 'access', 'some-access', 'no-access' ];
 
